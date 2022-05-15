@@ -1,0 +1,73 @@
+FUNCTION read_n (n) : INTEGER
+VAR
+    n : INTEGER;
+BEGIN
+REPEAT
+    read (n);
+UNTIL (n=3)
+    RETURN n ;
+END
+PROCEDURE read_v(n :INTEGER, VAR v: ARRAY_OF INTEGER)
+VAR
+    i : INTEGER
+BEGIN
+    FOR i FROM 0 TO n-1 DO
+        read (v[i]);
+    END_FOR
+END
+
+PROCEDURE dot_product(n1,n2:INTEGER , v1,v2:ARRAY_OF INTEGER)
+VAR
+    ps : INTEGER;
+    i : INTEGER;
+    j : INTEGER;
+BEGIN
+    FOR i FROM 0 TO n-1 DO
+    FOR j FROM i TO n-1 DO
+       ps += v1[i] * v2[j]
+    END_FOR
+    END_FOR
+    return(ps);
+END
+FUNCTION dot_products(n1,n2:INTEGER , v1,v2:ARRAY_OF INTEGER) : INTEGER
+VAR
+    ps : INTEGER;
+    i : INTEGER;
+    j : INTEGER;
+BEGIN
+    FOR i FROM 0 TO n-1 DO
+    FOR j FROM i TO n-1 DO
+       ps += v1[i] * v2[j]
+    END_FOR
+    END_FOR
+    RETURN ps ;
+END
+
+
+Algorithm DotProduct
+VAR
+ps, i, j, n1, n2: INTEGER;
+v1 : ARRAY_OF INTEGER[n1];
+v2 : ARRAY_OF INTEGER[n2];
+BEGIN
+n1:= read_n ();
+n2:= read_n ();
+
+read_v(n1,v1);
+read_v(n2,v2);
+//procedure
+dot_product(n1,n2,v1,v2);
+FOR i FROM 0 TO n DO
+    FOR j FROM i+1 TO n DO
+        IF (dot_product=0) THEN
+        Write ("these twp vectors are orthogonal");
+        END_IF
+    END_FOR
+END_FOR
+//function
+ps:= dot_products ();
+IF (ps=0) THEN
+    Write ("these twp vectors are orthogonal");
+END_IF
+
+END
