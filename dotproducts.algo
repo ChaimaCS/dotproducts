@@ -47,8 +47,8 @@ END
 Algorithm DotProduct
 VAR
 ps, i, j, n1, n2: INTEGER;
-v1 : ARRAY_OF INTEGER[n1];
-v2 : ARRAY_OF INTEGER[n2];
+v1 : ARRAY_OF INTEGER[100];
+v2 : ARRAY_OF INTEGER[100];
 BEGIN
 n1:= read_n ();
 n2:= read_n ();
